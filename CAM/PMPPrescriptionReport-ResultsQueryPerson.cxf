@@ -1,0 +1,1435 @@
+<as:CAM
+ xmlns:as="http://www.oasis-open.org/committees/cam"
+ xmlns:camed="http://jcam.org.uk/editor"
+ xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+ xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+ xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" CAMlevel="1" version="1.0" cameditor="3.0.0">
+  <as:Header>
+    <as:Description>Generated for PMPPrescriptionReport  by XSD 2 CAM generator v2.05</as:Description>
+    <as:Owner>To be Completed</as:Owner>
+    <as:Version>0.1</as:Version>
+    <as:DateTime>2012-11-27T16:39:25</as:DateTime>
+  </as:Header>
+  <as:Namespaces>
+    <as:namespace prefix="pmix">http://xml.ijis.org/niem/2.0/</as:namespace>
+    <as:namespace prefix="nc">http://niem.gov/niem/niem-core/2.0</as:namespace>
+    <as:namespace prefix="xsd">http://www.w3.org/2001/XMLSchema</as:namespace>
+    <as:namespace prefix="as">http://www.oasis-open.org/committees/cam</as:namespace>
+    <as:namespace prefix="xml">http://www.w3.org/XML/1998/namespace</as:namespace>
+    <as:namespace prefix="camed">http://jcam.org.uk/editor</as:namespace>
+    <as:namespace prefix="pmp">http://xml.ijis.org/niem/2.0/extension</as:namespace>
+  </as:Namespaces>
+  <as:Parameters>
+    <as:Parameter name="verify_PMIX.RX_MASTER" default="RX_PATIENT_ID+in+%28SELECT+RX_PATIENT_ID+FROM+RX_PATIENT+where+RX_PATIENT.RX_PATIENT_FAMILYNAME+%3D+%27%24familyName%27%29" use="dbmapping" />
+  </as:Parameters>
+  <as:AssemblyStructure>
+    <as:Structure ID="PMPPrescriptionReport" reference="" taxonomy="XML">
+      <as:parameters>
+        <as:Parameter name="verify_PMIX.RX_MASTER" default="RX_PATIENT_ID+in+%28SELECT+RX_PATIENT_ID+FROM+RX_PATIENT+where+RX_PATIENT.RX_PATIENT_FAMILYNAME+%3D+%27%24familyName%27%29" use="dbmapping" />
+      </as:parameters>
+      <as:Element name="pmix:PMPPrescriptionReport" path="/pmix:PMPPrescriptionReport" namespace="http://xml.ijis.org/niem/2.0/" namespacePrefix="pmix">
+        <as:Rule>
+          <as:constraint action="makeNillable(xsd)" xpath="//pmix:PMPPrescriptionReport" />
+        </as:Rule>
+        <as:Element name="pmp:RequestResponsePrescriptionReport" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+          <as:Rule>
+            <as:constraint action="makeMandatory()" />
+          </as:Rule>
+          <camed:annotation item="//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport">
+            <camed:documentation type="Type">pmp:RequestResponsePrescriptionReportType</camed:documentation>
+            <camed:documentation type="substitutionGroup">pmp:PrescriptionReport</camed:documentation>
+            <camed:documentation type="Definition">A prescription report sent to a PMP from another PMP in response to a request for information by that PMP.</camed:documentation>
+          </camed:annotation>
+          <as:Element name="pmp:ReportExecutionDate" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionDate" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+            <as:Rule>
+              <as:constraint action="setDateMask(YYYY-MM-DD)" xpath="//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionDate" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionDate">
+              <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+              <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+              <camed:documentation type="Definition">The Date the report was generated.</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="pmp:ReportExecutionTime" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionTime" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%HH:MI:SS.SZ%">
+            <as:Rule>
+              <as:constraint action="setDateMask(HH:MI:SS.SSS)" xpath="//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionTime" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionTime">
+              <camed:documentation type="Type">niem-xsd:time</camed:documentation>
+              <camed:documentation type="Definition">The Time the report was generated.</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="pmp:ReportDateRange" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:ReportDateRange" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:ReportDateRange">
+              <camed:documentation type="Type">pmp:ReportDateRangeType</camed:documentation>
+            </camed:annotation>
+            <as:Element name="pmp:ReportDateRangeBegin" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:ReportDateRange/pmp:ReportDateRangeBegin" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="2000-01-01">
+              <as:Rule>
+                <as:constraint action="makeNillable(xsd)" xpath="//pmp:ReportDateRange/pmp:ReportDateRangeBegin" />
+                <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//pmp:ReportDateRange/pmp:ReportDateRangeBegin" />
+                <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//pmp:ReportDateRange/pmp:ReportDateRangeBegin" />
+              </as:Rule>
+              <camed:annotation item="//pmp:ReportDateRange/pmp:ReportDateRangeBegin">
+                <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+                <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+                <camed:documentation type="Definition">Identifies the beginning of the data range of prescriptions included in the report.</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="pmp:ReportDateRangeEnd" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:ReportDateRange/pmp:ReportDateRangeEnd" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+              <as:Rule>
+                <as:constraint action="setDateMask(YYYY-MM-DD)" xpath="//pmp:ReportDateRange/pmp:ReportDateRangeEnd" />
+              </as:Rule>
+              <camed:annotation item="//pmp:ReportDateRange/pmp:ReportDateRangeEnd">
+                <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+                <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+                <camed:documentation type="Definition">Identifies the end of the date range of prescriptions included in the report.</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="pmp:Prescription" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+            <as:Rule>
+              <as:constraint action="makeRepeatable()" xpath="//pmp:RequestResponsePrescriptionReport/pmp:Prescription" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:Prescription">
+              <camed:documentation type="Type">pmp:PrescriptionType</camed:documentation>
+            </camed:annotation>
+            <as:Element name="pmp:PrescriptionNumberText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionNumberText" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeNillable(xsd)" xpath="//pmp:Prescription/pmp:PrescriptionNumberText" />
+              </as:Rule>
+              <camed:annotation item="//pmp:Prescription/pmp:PrescriptionNumberText">
+                <camed:documentation type="Type">nc:TextType</camed:documentation>
+                <camed:documentation type="Definition">Serial number assigned to the prescription by the pharmacy.
+        Replaces DSP02</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionNumberText">
+                <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_KEY</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="pmp:DrugRefillNumberCount" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:DrugRefillNumberCount" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%1%">
+              <as:Rule>
+                <as:constraint action="setNumberMask(######)" xpath="//pmp:Prescription/pmp:DrugRefillNumberCount" />
+                <as:constraint action="makeNillable(xsd)" xpath="//pmp:Prescription/pmp:DrugRefillNumberCount" />
+              </as:Rule>
+              <camed:annotation item="//pmp:Prescription/pmp:DrugRefillNumberCount">
+                <camed:documentation type="Type">niem-xsd:nonNegativeInteger</camed:documentation>
+                <camed:documentation type="Definition">Number of the fill of the prescription. 0 indicates original dispensing.</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:DrugRefillNumberCount">
+                <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_REFILL_COUNT</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="pmp:PrescriptionFilledDate" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionFilledDate" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+              <as:Rule>
+                <as:constraint action="makeOptional()" xpath="//pmp:Prescription/pmp:PrescriptionFilledDate" />
+              </as:Rule>
+              <camed:annotation item="//pmp:Prescription/pmp:PrescriptionFilledDate">
+                <camed:documentation type="Type">nc:DateType</camed:documentation>
+                <camed:documentation type="Definition">Date the prescription was filled
+        replaces DSP05</camed:documentation>
+              </camed:annotation>
+              <as:Element name="nc:Date" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionFilledDate/nc:Date" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%YYYY-MM-DDZ%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:PrescriptionFilledDate/nc:Date" />
+                  <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//pmp:PrescriptionFilledDate/nc:Date" />
+                </as:Rule>
+                <camed:annotation item="//pmp:PrescriptionFilledDate/nc:Date">
+                  <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+                  <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionFilledDate/nc:Date">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_FILLED_DATE</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+            </as:Element>
+            <as:Element name="pmp:Patient" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="//pmp:Prescription/pmp:Patient">
+                <camed:documentation type="Type">pmp:PatientType</camed:documentation>
+              </camed:annotation>
+              <as:Element name="nc:PersonBirthDate" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                <as:Rule>
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/nc:PersonBirthDate" />
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/nc:PersonBirthDate" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/nc:PersonBirthDate">
+                  <camed:documentation type="Type">nc:DateType</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:Date" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate/nc:Date" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%YYYY-MM-DDZ%">
+                  <as:Rule>
+                    <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/nc:Date" />
+                    <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/nc:Date" />
+                  </as:Rule>
+                </as:Element>
+                <as:Element name="pmp:ReportDateRangeBegin" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate/pmp:ReportDateRangeBegin" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                  <as:Rule>
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                    <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                    <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                  </as:Rule>
+                </as:Element>
+                <as:Element name="pmp:ReportDateRangeEnd" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate/pmp:ReportDateRangeEnd" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                    <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                    <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                  </as:Rule>
+                </as:Element>
+                <as:Element name="pmp:RequestPrescriptionDateRangeBegin" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                    <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                    <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                  </as:Rule>
+                </as:Element>
+                <as:Element name="pmp:RequestPrescriptionDateRangeEnd" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                  <as:Rule>
+                    <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                    <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                  </as:Rule>
+                </as:Element>
+                <as:Element name="pmp:ReportExecutionDate" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonBirthDate/pmp:ReportExecutionDate" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                  <as:Rule>
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                    <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                    <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                  </as:Rule>
+                </as:Element>
+              </as:Element>
+              <as:Element name="nc:PersonName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                <as:Rule>
+                  <as:constraint action="makeMandatory()" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/nc:PersonName">
+                  <camed:documentation type="Type">nc:PersonNameType</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:PersonNamePrefixText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonNamePrefixText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonName/nc:PersonNamePrefixText">
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:PersonGivenName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonGivenName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonGivenName" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonGivenName" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonGivenName" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonName/nc:PersonGivenName">
+                    <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                  </camed:annotation>
+                  <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonGivenName">
+                    <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_GIVENNAME</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:PersonMiddleName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonMiddleName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonName/nc:PersonMiddleName">
+                    <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:PersonSurName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonSurName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonSurName" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonSurName" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonSurName" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonName/nc:PersonSurName">
+                    <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                  </camed:annotation>
+                  <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonSurName">
+                    <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_FAMILYNAME</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:PersonNameSuffixText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonNameSuffixText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                    <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonName/nc:PersonNameSuffixText">
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:PersonFullName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonFullName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonFullName" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonFullName" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonFullName" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonName/nc:PersonFullName">
+                    <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                  </camed:annotation>
+                  <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonFullName">
+                    <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_FULLNAME</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="nc:PersonSexCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonSexCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=SEXCodeType%">
+                <as:Rule>
+                  <as:constraint action="makeMandatory()" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/nc:PersonSexCode">
+                  <camed:documentation type="substitutionGroup">nc:PersonSex</camed:documentation>
+                  <camed:documentation type="Type">fbi:SEXCodeType</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonSexCode">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_SEX</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+              <as:Element name="nc:PersonSSNIdentification" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonSSNIdentification" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                <as:Rule>
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/nc:PersonSSNIdentification" />
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/nc:PersonSSNIdentification" />
+                  <as:constraint action="makeRepeatable()" xpath="//pmp:Patient/nc:PersonSSNIdentification" />
+                  <as:constraint action="makeNillable(xsd)" xpath="//pmp:Patient/nc:PersonSSNIdentification" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/nc:PersonSSNIdentification">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonSSNIdentification/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonSSNIdentification/nc:IdentificationID" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonSSNIdentification/nc:IdentificationID" />
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonSSNIdentification/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonPrimaryContactInformation" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeRepeatable()" xpath="//pmp:Patient/pmp:PersonPrimaryContactInformation" />
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonPrimaryContactInformation" />
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonPrimaryContactInformation" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonPrimaryContactInformation">
+                  <camed:documentation type="Type">nc:ContactInformationType</camed:documentation>
+                  <camed:documentation type="Definition">Holds telephone number and address of a person
+        Replaces PAT12, PAT13, PAT14, PAT15, PAT16, PAT17</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:ContactMailingAddress" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" />
+                    <as:constraint action="setChoice(//pmp:PersonPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')])" xpath="//pmp:PersonPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')]" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress">
+                    <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+                    <camed:documentation type="Type">nc:AddressType</camed:documentation>
+                  </camed:annotation>
+                  <as:Element name="nc:AddressFullText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:AddressFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                    <as:Rule>
+                      <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactMailingAddress/nc:AddressFullText" />
+                      <as:constraint action="makeRepeatable()" xpath="//nc:ContactMailingAddress/nc:AddressFullText" />
+                      <as:constraint action="makeOptional()" xpath="//nc:ContactMailingAddress/nc:AddressFullText" />
+                      <as:constraint action="setChoice(//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" xpath="//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')]" />
+                    </as:Rule>
+                  </as:Element>
+                  <as:Element name="nc:StructuredAddress" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                    <as:Rule>
+                      <as:constraint action="setChoice(//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" xpath="//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')]" />
+                      <as:constraint action="makeOptional()" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                      <as:constraint action="makeRepeatable()" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                      <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                    </as:Rule>
+                    <as:Element name="nc:LocationStreet" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStreet" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                      <as:Rule>
+                        <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:StructuredAddress/nc:LocationStreet">
+                        <camed:documentation type="substitutionGroup">nc:AddressDeliveryPoint</camed:documentation>
+                        <camed:documentation type="Type">nc:StreetType</camed:documentation>
+                      </camed:annotation>
+                      <as:Element name="nc:StreetFullText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeRepeatable()" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                          <as:constraint action="makeOptional()" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:LocationStreet/nc:StreetFullText">
+                          <camed:documentation type="Type">nc:TextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                    </as:Element>
+                    <as:Element name="nc:LocationCityName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationCityName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                      <as:Rule>
+                        <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                        <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:StructuredAddress/nc:LocationCityName">
+                        <camed:documentation type="Type">nc:ProperNameTextType</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:LocationStateCanadianProvinceCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=CanadianProvinceCodeType%">
+                      <as:Rule>
+                        <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" xpath="//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')]" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                        <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode">
+                        <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                        <camed:documentation type="Type">can:CanadianProvinceCodeType</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:LocationStateUSPostalServiceCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=USStateCodeType%">
+                      <as:Rule>
+                        <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                        <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                        <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" xpath="//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')]" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode">
+                        <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                        <camed:documentation type="Type">usps:USStateCodeType</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:LocationPostalCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationPostalCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                      <as:Rule>
+                        <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalCode">
+                        <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:LocationPostalExtensionCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationPostalExtensionCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                      <as:Rule>
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                        <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalExtensionCode">
+                        <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                  </as:Element>
+                </as:Element>
+                <as:Element name="nc:ContactTelephoneNumber" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" />
+                    <as:constraint action="setChoice(//pmp:PersonPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')])" xpath="//pmp:PersonPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')]" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber">
+                    <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+                    <camed:documentation type="Type">nc:TelephoneNumberType</camed:documentation>
+                  </camed:annotation>
+                  <as:Element name="nc:FullTelephoneNumber" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                    <as:Rule>
+                      <as:constraint action="makeOptional()" xpath="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+                      <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+                      <as:constraint action="makeRepeatable()" xpath="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+                    </as:Rule>
+                    <camed:annotation item="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+                      <camed:documentation type="substitutionGroup">nc:TelephoneNumberRepresentation</camed:documentation>
+                      <camed:documentation type="Type">nc:FullTelephoneNumberType</camed:documentation>
+                    </camed:annotation>
+                    <as:Element name="nc:TelephoneNumberFullID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneNumberFullID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                      <as:Rule>
+                        <as:constraint action="makeRepeatable()" xpath="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+                        <as:constraint action="makeOptional()" xpath="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID">
+                        <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                  </as:Element>
+                </as:Element>
+                <as:Element name="nc:ContactEntity" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactEntity" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactEntity" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactEntity" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactEntity">
+                    <camed:documentation type="Type">nc:EntityType</camed:documentation>
+                  </camed:annotation>
+                  <as:Element name="nc:EntityOrganization" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                    <as:Rule>
+                      <as:constraint action="setChoice(//nc:ContactEntity/*[contains(name(),'nc:EntityOrganization') or contains(name(),'nc:EntityPerson')])" xpath="//nc:ContactEntity/*[contains(name(),'nc:EntityOrganization') or contains(name(),'nc:EntityPerson')]" />
+                      <as:constraint action="makeRepeatable()" xpath="//nc:ContactEntity/nc:EntityOrganization" />
+                      <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactEntity/nc:EntityOrganization" />
+                      <as:constraint action="makeOptional()" xpath="//nc:ContactEntity/nc:EntityOrganization" />
+                    </as:Rule>
+                    <camed:annotation item="//nc:ContactEntity/nc:EntityOrganization">
+                      <camed:documentation type="substitutionGroup">nc:EntityRepresentation</camed:documentation>
+                      <camed:documentation type="Type">nc:OrganizationType</camed:documentation>
+                    </camed:annotation>
+                    <as:Element name="nc:OrganizationDoingBusinessAsName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationDoingBusinessAsName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                      <as:Rule>
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName" />
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName">
+                        <camed:documentation type="Type">nc:TextType</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:OrganizationLocation" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                      <as:Rule>
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityOrganization/nc:OrganizationLocation" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityOrganization/nc:OrganizationLocation" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityOrganization/nc:OrganizationLocation" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityOrganization/nc:OrganizationLocation">
+                        <camed:documentation type="Type">nc:LocationType</camed:documentation>
+                      </camed:annotation>
+                      <as:Element name="nc:LocationAddress" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                        <as:Rule>
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:OrganizationLocation/nc:LocationAddress" />
+                          <as:constraint action="makeOptional()" xpath="//nc:OrganizationLocation/nc:LocationAddress" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:OrganizationLocation/nc:LocationAddress" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:OrganizationLocation/nc:LocationAddress">
+                          <camed:documentation type="Type">nc:AddressType</camed:documentation>
+                        </camed:annotation>
+                        <as:Element name="nc:AddressFullText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:AddressFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                          <as:Rule>
+                            <as:constraint action="setChoice(//nc:LocationAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" xpath="//nc:LocationAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')]" />
+                            <as:constraint action="makeNillable(xsd)" xpath="//nc:LocationAddress/nc:AddressFullText" />
+                            <as:constraint action="makeRepeatable()" xpath="//nc:LocationAddress/nc:AddressFullText" />
+                            <as:constraint action="makeOptional()" xpath="//nc:LocationAddress/nc:AddressFullText" />
+                          </as:Rule>
+                          <camed:annotation item="//nc:LocationAddress/nc:AddressFullText">
+                            <camed:documentation type="substitutionGroup">nc:AddressRepresentation</camed:documentation>
+                            <camed:documentation type="Type">nc:TextType</camed:documentation>
+                          </camed:annotation>
+                        </as:Element>
+                        <as:Element name="nc:StructuredAddress" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                          <as:Rule>
+                            <as:constraint action="makeRepeatable()" xpath="//nc:LocationAddress/nc:StructuredAddress" />
+                            <as:constraint action="makeOptional()" xpath="//nc:LocationAddress/nc:StructuredAddress" />
+                            <as:constraint action="makeNillable(xsd)" xpath="//nc:LocationAddress/nc:StructuredAddress" />
+                            <as:constraint action="setChoice(//nc:LocationAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" xpath="//nc:LocationAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')]" />
+                          </as:Rule>
+                          <camed:annotation item="//nc:LocationAddress/nc:StructuredAddress">
+                            <camed:documentation type="substitutionGroup">nc:AddressRepresentation</camed:documentation>
+                            <camed:documentation type="Type">nc:StructuredAddressType</camed:documentation>
+                          </camed:annotation>
+                          <as:Element name="nc:LocationStreet" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                            <as:Rule>
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationStreet">
+                              <camed:documentation type="substitutionGroup">nc:AddressDeliveryPoint</camed:documentation>
+                              <camed:documentation type="Type">nc:StreetType</camed:documentation>
+                            </camed:annotation>
+                            <as:Element name="nc:StreetFullText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                              <as:Rule>
+                                <as:constraint action="makeRepeatable()" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                                <as:constraint action="makeNillable(xsd)" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                                <as:constraint action="makeOptional()" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                              </as:Rule>
+                              <camed:annotation item="//nc:LocationStreet/nc:StreetFullText">
+                                <camed:documentation type="Type">nc:TextType</camed:documentation>
+                              </camed:annotation>
+                            </as:Element>
+                          </as:Element>
+                          <as:Element name="nc:LocationCityName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationCityName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationCityName">
+                              <camed:documentation type="Type">nc:ProperNameTextType</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationStateCanadianProvinceCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=CanadianProvinceCodeType%">
+                            <as:Rule>
+                              <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" xpath="//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')]" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode">
+                              <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                              <camed:documentation type="Type">can:CanadianProvinceCodeType</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationStateUSPostalServiceCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=USStateCodeType%">
+                            <as:Rule>
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                              <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" xpath="//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')]" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode">
+                              <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                              <camed:documentation type="Type">usps:USStateCodeType</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationPostalCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationPostalCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalCode">
+                              <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationPostalExtensionCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationLocation/nc:LocationAddress/nc:StructuredAddress/nc:LocationPostalExtensionCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalExtensionCode">
+                              <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                        </as:Element>
+                      </as:Element>
+                    </as:Element>
+                    <as:Element name="nc:OrganizationName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                      <as:Rule>
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityOrganization/nc:OrganizationName" />
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityOrganization/nc:OrganizationName" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityOrganization/nc:OrganizationName" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityOrganization/nc:OrganizationName">
+                        <camed:documentation type="Type">nc:TextType</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:OrganizationPrimaryContactInformation" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                      <as:Rule>
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation">
+                        <camed:documentation type="Type">nc:ContactInformationType</camed:documentation>
+                      </camed:annotation>
+                      <as:Element name="nc:ContactMailingAddress" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                        <as:Rule>
+                          <as:constraint action="setChoice(//nc:OrganizationPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')])" xpath="//nc:OrganizationPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')]" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress" />
+                          <as:constraint action="makeOptional()" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress" />
+                        </as:Rule>
+                        <as:Element name="nc:AddressFullText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:AddressFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                          <as:Rule>
+                            <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactMailingAddress/nc:AddressFullText" />
+                            <as:constraint action="makeRepeatable()" xpath="//nc:ContactMailingAddress/nc:AddressFullText" />
+                            <as:constraint action="makeOptional()" xpath="//nc:ContactMailingAddress/nc:AddressFullText" />
+                            <as:constraint action="setChoice(//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" xpath="//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')]" />
+                          </as:Rule>
+                        </as:Element>
+                        <as:Element name="nc:StructuredAddress" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                          <as:Rule>
+                            <as:constraint action="setChoice(//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" xpath="//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')]" />
+                            <as:constraint action="makeOptional()" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                            <as:constraint action="makeRepeatable()" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                            <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                          </as:Rule>
+                          <as:Element name="nc:LocationStreet" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStreet" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                            <as:Rule>
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStreet" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationStreet">
+                              <camed:documentation type="substitutionGroup">nc:AddressDeliveryPoint</camed:documentation>
+                              <camed:documentation type="Type">nc:StreetType</camed:documentation>
+                            </camed:annotation>
+                            <as:Element name="nc:StreetFullText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                              <as:Rule>
+                                <as:constraint action="makeRepeatable()" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                                <as:constraint action="makeNillable(xsd)" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                                <as:constraint action="makeOptional()" xpath="//nc:LocationStreet/nc:StreetFullText" />
+                              </as:Rule>
+                              <camed:annotation item="//nc:LocationStreet/nc:StreetFullText">
+                                <camed:documentation type="Type">nc:TextType</camed:documentation>
+                              </camed:annotation>
+                            </as:Element>
+                          </as:Element>
+                          <as:Element name="nc:LocationCityName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationCityName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationCityName" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationCityName">
+                              <camed:documentation type="Type">nc:ProperNameTextType</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationStateCanadianProvinceCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=CanadianProvinceCodeType%">
+                            <as:Rule>
+                              <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" xpath="//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')]" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode">
+                              <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                              <camed:documentation type="Type">can:CanadianProvinceCodeType</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationStateUSPostalServiceCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=USStateCodeType%">
+                            <as:Rule>
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" />
+                              <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" xpath="//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')]" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode">
+                              <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                              <camed:documentation type="Type">usps:USStateCodeType</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationPostalCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationPostalCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationPostalCode" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalCode">
+                              <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                          <as:Element name="nc:LocationPostalExtensionCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationPostalExtensionCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                              <as:constraint action="makeOptional()" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                              <as:constraint action="makeRepeatable()" xpath="//nc:StructuredAddress/nc:LocationPostalExtensionCode" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalExtensionCode">
+                              <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                        </as:Element>
+                      </as:Element>
+                      <as:Element name="nc:ContactTelephoneNumber" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                        <as:Rule>
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber" />
+                          <as:constraint action="makeOptional()" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber" />
+                          <as:constraint action="setChoice(//nc:OrganizationPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')])" xpath="//nc:OrganizationPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')]" />
+                        </as:Rule>
+                        <as:Element name="nc:FullTelephoneNumber" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                          <as:Rule>
+                            <as:constraint action="makeOptional()" xpath="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+                            <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+                            <as:constraint action="makeRepeatable()" xpath="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber" />
+                          </as:Rule>
+                          <camed:annotation item="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+                            <camed:documentation type="substitutionGroup">nc:TelephoneNumberRepresentation</camed:documentation>
+                            <camed:documentation type="Type">nc:FullTelephoneNumberType</camed:documentation>
+                          </camed:annotation>
+                          <as:Element name="nc:TelephoneNumberFullID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber/nc:TelephoneNumberFullID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                            <as:Rule>
+                              <as:constraint action="makeRepeatable()" xpath="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+                              <as:constraint action="makeOptional()" xpath="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+                              <as:constraint action="makeNillable(xsd)" xpath="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID" />
+                            </as:Rule>
+                            <camed:annotation item="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID">
+                              <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                            </camed:annotation>
+                          </as:Element>
+                        </as:Element>
+                      </as:Element>
+                      <as:Element name="nc:ContactEntity" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityOrganization/nc:OrganizationPrimaryContactInformation/nc:ContactEntity" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="">
+                        <as:Rule>
+                          <as:constraint action="makeRepeatable()" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactEntity" />
+                          <as:constraint action="makeOptional()" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactEntity" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:OrganizationPrimaryContactInformation/nc:ContactEntity" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:OrganizationPrimaryContactInformation/nc:ContactEntity">
+                          <camed:documentation type="Type">nc:EntityType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                    </as:Element>
+                  </as:Element>
+                  <as:Element name="nc:EntityPerson" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                    <as:Rule>
+                      <as:constraint action="setChoice(//nc:ContactEntity/*[contains(name(),'nc:EntityOrganization') or contains(name(),'nc:EntityPerson')])" xpath="//nc:ContactEntity/*[contains(name(),'nc:EntityOrganization') or contains(name(),'nc:EntityPerson')]" />
+                      <as:constraint action="makeOptional()" xpath="//nc:ContactEntity/nc:EntityPerson" />
+                      <as:constraint action="makeRepeatable()" xpath="//nc:ContactEntity/nc:EntityPerson" />
+                      <as:constraint action="makeNillable(xsd)" xpath="//nc:ContactEntity/nc:EntityPerson" />
+                    </as:Rule>
+                    <camed:annotation item="//nc:ContactEntity/nc:EntityPerson">
+                      <camed:documentation type="substitutionGroup">nc:EntityRepresentation</camed:documentation>
+                      <camed:documentation type="Type">nc:PersonType</camed:documentation>
+                    </camed:annotation>
+                    <as:Element name="nc:PersonBirthDate" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                      <as:Rule>
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityPerson/nc:PersonBirthDate" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityPerson/nc:PersonBirthDate" />
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityPerson/nc:PersonBirthDate" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityPerson/nc:PersonBirthDate">
+                        <camed:documentation type="Type">nc:DateType</camed:documentation>
+                      </camed:annotation>
+                      <as:Element name="nc:Date" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate/nc:Date" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%YYYY-MM-DDZ%">
+                        <as:Rule>
+                          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/nc:Date" />
+                          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/nc:Date" />
+                        </as:Rule>
+                      </as:Element>
+                      <as:Element name="pmp:ReportDateRangeBegin" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate/pmp:ReportDateRangeBegin" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                        <as:Rule>
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeBegin" />
+                        </as:Rule>
+                      </as:Element>
+                      <as:Element name="pmp:ReportDateRangeEnd" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate/pmp:ReportDateRangeEnd" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                        <as:Rule>
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:ReportDateRangeEnd" />
+                        </as:Rule>
+                      </as:Element>
+                      <as:Element name="pmp:RequestPrescriptionDateRangeBegin" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                        <as:Rule>
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin" />
+                        </as:Rule>
+                      </as:Element>
+                      <as:Element name="pmp:RequestPrescriptionDateRangeEnd" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                        <as:Rule>
+                          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd" />
+                        </as:Rule>
+                      </as:Element>
+                      <as:Element name="pmp:ReportExecutionDate" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonBirthDate/pmp:ReportExecutionDate" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+                        <as:Rule>
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/pmp:ReportExecutionDate" />
+                        </as:Rule>
+                      </as:Element>
+                    </as:Element>
+                    <as:Element name="nc:PersonName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                      <as:Rule>
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityPerson/nc:PersonName" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityPerson/nc:PersonName" />
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityPerson/nc:PersonName" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityPerson/nc:PersonName">
+                        <camed:documentation type="Type">nc:PersonNameType</camed:documentation>
+                      </camed:annotation>
+                      <as:Element name="nc:PersonNamePrefixText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName/nc:PersonNamePrefixText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonNamePrefixText" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonName/nc:PersonNamePrefixText">
+                          <camed:documentation type="Type">nc:TextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                      <as:Element name="nc:PersonGivenName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName/nc:PersonGivenName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonGivenName" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonGivenName" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonGivenName" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonName/nc:PersonGivenName">
+                          <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                      <as:Element name="nc:PersonMiddleName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName/nc:PersonMiddleName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonName/nc:PersonMiddleName">
+                          <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                      <as:Element name="nc:PersonSurName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName/nc:PersonSurName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonSurName" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonSurName" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonSurName" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonName/nc:PersonSurName">
+                          <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                      <as:Element name="nc:PersonNameSuffixText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName/nc:PersonNameSuffixText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                          <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonNameSuffixText" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonName/nc:PersonNameSuffixText">
+                          <camed:documentation type="Type">nc:TextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                      <as:Element name="nc:PersonFullName" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonName/nc:PersonFullName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonName/nc:PersonFullName" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonFullName" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonName/nc:PersonFullName" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonName/nc:PersonFullName">
+                          <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                    </as:Element>
+                    <as:Element name="nc:PersonSexCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonSexCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=SEXCodeType%">
+                      <as:Rule>
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityPerson/nc:PersonSexCode" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityPerson/nc:PersonSexCode" />
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityPerson/nc:PersonSexCode" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityPerson/nc:PersonSexCode">
+                        <camed:documentation type="substitutionGroup">nc:PersonSex</camed:documentation>
+                        <camed:documentation type="Type">fbi:SEXCodeType</camed:documentation>
+                      </camed:annotation>
+                    </as:Element>
+                    <as:Element name="nc:PersonSSNIdentification" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonSSNIdentification" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                      <as:Rule>
+                        <as:constraint action="makeNillable(xsd)" xpath="//nc:EntityPerson/nc:PersonSSNIdentification" />
+                        <as:constraint action="makeOptional()" xpath="//nc:EntityPerson/nc:PersonSSNIdentification" />
+                        <as:constraint action="makeRepeatable()" xpath="//nc:EntityPerson/nc:PersonSSNIdentification" />
+                      </as:Rule>
+                      <camed:annotation item="//nc:EntityPerson/nc:PersonSSNIdentification">
+                        <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                      </camed:annotation>
+                      <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonSSNIdentification/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonSSNIdentification/nc:IdentificationID" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonSSNIdentification/nc:IdentificationID" />
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonSSNIdentification/nc:IdentificationID" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationID">
+                          <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                      <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPrimaryContactInformation/nc:ContactEntity/nc:EntityPerson/nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                        <as:Rule>
+                          <as:constraint action="makeOptional()" xpath="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+                          <as:constraint action="makeNillable(xsd)" xpath="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+                          <as:constraint action="makeRepeatable()" xpath="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" />
+                        </as:Rule>
+                        <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText">
+                          <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                          <camed:documentation type="Type">nc:TextType</camed:documentation>
+                        </camed:annotation>
+                      </as:Element>
+                    </as:Element>
+                  </as:Element>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonDriverLicenseIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonDriverLicenseIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonDriverLicenseIdentifier" />
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonDriverLicenseIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonDriverLicenseIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using their driver's license number and the entity which has jurisdiction over the licensee based on the license.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonDriverLicenseIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonMilitaryIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonMilitaryIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonMilitaryIdentifier" />
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonMilitaryIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonMilitaryIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using their military id number and the entity which has jurisdiction over the licensee based on the license.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonMilitaryIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonMilitaryIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonMilitaryIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonMilitaryIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonMilitaryIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonOtherIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonOtherIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonOtherIdentifier" />
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonOtherIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonOtherIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using an id number and the entity which has jurisdiction over the licensee based on the license.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonOtherIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonOtherIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonOtherIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonOtherIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonOtherIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonPassportIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPassportIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonPassportIdentifier" />
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonPassportIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonPassportIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using their passport number and the entity which has jurisdiction over the passport.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPassportIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonPassportIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonPassportIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPassportIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonPassportIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonSocialSecurityNumberIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier" />
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using their social security number and the entity which has jurisdiction over the number.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonStateIssuedIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonStateIssuedIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonStateIssuedIdentifier" />
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonStateIssuedIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonStateIssuedIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using their state identification number and the entity which has jurisdiction over the identification.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonStateIssuedIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonStateIssuedIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonStateIssuedIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonStateIssuedIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonStateIssuedIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonTribalIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonTribalIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PersonTribalIdentifier" />
+                  <as:constraint action="excludeTree()" xpath="//pmp:Patient/pmp:PersonTribalIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonTribalIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using their tribal id number and the entity which has jurisdiction over the id.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonTribalIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonTribalIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonTribalIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonTribalIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonTribalIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:PersonUniqueSystemIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonUniqueSystemIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeMandatory()" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PersonUniqueSystemIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identfies a person using a unique system number and the entity which has jurisdiction over the number.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonUniqueSystemIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonUniqueSystemIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonUniqueSystemIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                  <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonUniqueSystemIdentifier/nc:IdentificationID">
+                    <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_ID</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonUniqueSystemIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="ID">
+                  <as:Rule>
+                    <as:constraint action="makeOptional()" xpath="//pmp:PersonUniqueSystemIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:PersonUniqueSystemIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:SpeciesCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:SpeciesCode" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%&quot;01&quot;%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:SpeciesCode" />
+                  <as:constraint action="makeNillable(xsd)" xpath="//pmp:Patient/pmp:SpeciesCode" />
+                  <as:constraint action="restrictValues('01' |'02')" xpath="//pmp:Patient/pmp:SpeciesCode">
+                    <as:annotation>
+                      <as:documentation type="Definition">01 - Human | 
+02 - Veterinary Patient |</as:documentation>
+                    </as:annotation>
+                  </as:constraint>
+                  <as:constraint action="excludeElement()" xpath="//pmp:Patient/pmp:SpeciesCode" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:SpeciesCode">
+                  <camed:documentation type="Type">pmpcd:SpeciesCodeType</camed:documentation>
+                  <camed:documentation type="Definition">Indicates whether the patient is human or an animal.
+        Replaces PAT20</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+              <as:Element name="pmp:PatientLocationCode" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PatientLocationCode" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%&quot;01&quot;%">
+                <as:Rule>
+                  <as:constraint action="restrictValues('01' |'02' |'03' |'04' |'05' |'06' |'07' |'08' |'09' |'10' |'11' |'98' |'99')" xpath="//pmp:Patient/pmp:PatientLocationCode">
+                    <as:annotation>
+                      <as:documentation type="Definition">01 - Home | 
+02 - Intermediary Care | 
+03 - Nursing Home | 
+04 - Long-Term/Extended Care | 
+05 - Rest Home | 
+06 - Boarding Home | 
+07 - Skilled-Care Facility | 
+08 - Sub-Acute Care Facility | 
+09 - Acute-Care Facility | 
+10 - Outpatient | 
+11 - Hospice | 
+98 - Unknown | 
+99 - Other |</as:documentation>
+                    </as:annotation>
+                  </as:constraint>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PatientLocationCode" />
+                  <as:constraint action="makeNillable(xsd)" xpath="//pmp:Patient/pmp:PatientLocationCode" />
+                  <as:constraint action="excludeElement()" xpath="//pmp:Patient/pmp:PatientLocationCode" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PatientLocationCode">
+                  <camed:documentation type="Type">pmpcd:PatientLocationCodeType</camed:documentation>
+                  <camed:documentation type="Definition">Indicates where the patient is located when receiving pharmacy services
+        Replaces PAT21</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+              <as:Element name="pmp:PatientNameOfAnimalText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PatientNameOfAnimalText" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%string%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:Patient/pmp:PatientNameOfAnimalText" />
+                  <as:constraint action="excludeElement()" xpath="//pmp:Patient/pmp:PatientNameOfAnimalText" />
+                  <as:constraint action="makeNillable(xsd)" xpath="//pmp:Patient/pmp:PatientNameOfAnimalText" />
+                </as:Rule>
+                <camed:annotation item="//pmp:Patient/pmp:PatientNameOfAnimalText">
+                  <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  <camed:documentation type="Definition">Name of animal for veterinary medications
+        Replaces PAT23</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+            </as:Element>
+            <as:Element name="pmp:PrescriptionDrug" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+              <as:Rule>
+                <as:constraint action="makeRepeatable()" xpath="//pmp:Prescription/pmp:PrescriptionDrug" />
+              </as:Rule>
+              <camed:annotation item="//pmp:Prescription/pmp:PrescriptionDrug">
+                <camed:documentation type="Type">pmp:PrescriptionDrugType</camed:documentation>
+              </camed:annotation>
+              <as:Element name="pmp:DrugUPCProductIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier" />
+                </as:Rule>
+                <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier">
+                  <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                  <camed:documentation type="substitutionGroup">pmp:DrugProductIdentifier</camed:documentation>
+                  <camed:documentation type="Definition">Identifies a drug using the UPC
+        Replaces DSP07 and DSP08 when DSP07 is 02 UPC</camed:documentation>
+                </camed:annotation>
+                <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationID" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationID" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:DrugUPCProductIdentifier/nc:IdentificationID">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                  <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier/nc:IdentificationID">
+                    <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_ID</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="excludeElement()" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeNillable(xsd)" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeOptional()" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText" />
+                    <as:constraint action="makeRepeatable()" xpath="//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText" />
+                  </as:Rule>
+                  <camed:annotation item="//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText">
+                    <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                    <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+              <as:Element name="pmp:DrugProductNameText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugProductNameText" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%string%">
+                <as:Rule>
+                  <as:constraint action="makeMandatory()" />
+                </as:Rule>
+                <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugProductNameText">
+                  <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  <camed:documentation type="Definition">Product Name of the Drug.</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugProductNameText">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_NAME</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+              <as:Element name="pmp:DrugStrengthText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugStrengthText" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%string%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:PrescriptionDrug/pmp:DrugStrengthText" />
+                </as:Rule>
+                <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugStrengthText">
+                  <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  <camed:documentation type="Definition">The level of potency of the drug.</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugStrengthText">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_STRENGTH</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+              <as:Element name="pmp:DrugUnitOfMeasureText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%string%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText" />
+                </as:Rule>
+                <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText">
+                  <camed:documentation type="Type">nc:TextType</camed:documentation>
+                  <camed:documentation type="Definition">The unit in which the particular drug is measured</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_DOSE</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+            </as:Element>
+            <as:Element name="pmp:StateIssuedRxSerialNumberIdentifier" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+              <as:Rule>
+                <as:constraint action="makeOptional()" xpath="//pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier" />
+              </as:Rule>
+              <camed:annotation item="//pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier">
+                <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+                <camed:documentation type="Definition">Number assigned to a state issued serialized prescription blank as well as the state which issued it.
+        Replaces AIR01 and AIR02</camed:documentation>
+              </camed:annotation>
+              <as:Element name="nc:IdentificationID" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID" />
+                </as:Rule>
+                <camed:annotation item="//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID">
+                  <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_ISSUER_ID</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+              <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                <as:Rule>
+                  <as:constraint action="makeOptional()" xpath="//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText" />
+                </as:Rule>
+                <camed:annotation item="//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText">
+                  <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                  <camed:documentation type="Type">nc:TextType</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText">
+                  <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_STATE_CODE</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+            </as:Element>
+          </as:Element>
+        </as:Element>
+      </as:Element>
+    </as:Structure>
+  </as:AssemblyStructure>
+</as:CAM>

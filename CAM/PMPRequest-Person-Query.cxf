@@ -1,0 +1,280 @@
+<as:CAM
+ xmlns:as="http://www.oasis-open.org/committees/cam"
+ xmlns:camed="http://jcam.org.uk/editor"
+ xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+ xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+ xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" CAMlevel="1" version="1.0" cameditor="3.0.0">
+  <as:Header>
+    <as:Description>Generated for PMPRequest  by XSD 2 CAM generator v2.05</as:Description>
+    <as:Owner>To be Completed</as:Owner>
+    <as:Version>0.1</as:Version>
+    <as:DateTime>2012-11-26T17:22:17</as:DateTime>
+  </as:Header>
+  <as:Namespaces>
+    <as:namespace prefix="pmix">http://xml.ijis.org/niem/2.0/</as:namespace>
+    <as:namespace prefix="nc">http://niem.gov/niem/niem-core/2.0</as:namespace>
+    <as:namespace prefix="xsd">http://www.w3.org/2001/XMLSchema</as:namespace>
+    <as:namespace prefix="as">http://www.oasis-open.org/committees/cam</as:namespace>
+    <as:namespace prefix="xml">http://www.w3.org/XML/1998/namespace</as:namespace>
+    <as:namespace prefix="camed">http://jcam.org.uk/editor</as:namespace>
+    <as:namespace prefix="pmp">http://xml.ijis.org/niem/2.0/extension</as:namespace>
+  </as:Namespaces>
+  <as:Parameters>
+    <as:Parameter name="verify_PMIX.APPLICANT_MASTER" default="APPLICANT_ID+%3D+%27%24IDnumber%27" use="dbmapping" />
+  </as:Parameters>
+  <as:AssemblyStructure>
+    <as:Structure ID="PMPRequest" reference="" taxonomy="XML">
+      <as:parameters>
+        <as:Parameter name="verify_PMIX.APPLICANT_MASTER" default="APPLICANT_ID+%3D+%27%24IDnumber%27" use="dbmapping" />
+      </as:parameters>
+      <as:Element name="pmix:PMPRequest" path="/pmix:PMPRequest" namespace="http://xml.ijis.org/niem/2.0/" namespacePrefix="pmix">
+        <as:Rule>
+          <as:constraint action="makeMandatory()" />
+        </as:Rule>
+        <as:Element name="pmp:RequestPrescriptionDateRange" path="/pmix:PMPRequest/pmp:RequestPrescriptionDateRange" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+          <as:Rule>
+            <as:constraint action="makeMandatory()" />
+          </as:Rule>
+          <camed:annotation item="//pmix:PMPRequest/pmp:RequestPrescriptionDateRange">
+            <camed:documentation type="Type">pmp:RequestPrescriptionDateRangeType</camed:documentation>
+          </camed:annotation>
+          <as:Element name="pmp:RequestPrescriptionDateRangeBegin" path="/pmix:PMPRequest/pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeBegin" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+            <as:Rule>
+              <as:constraint action="setDateMask(YYYY-MM-DD)" xpath="//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeBegin" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeBegin">
+              <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+              <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+              <camed:documentation type="Definition">Used in a request for prescription data to indicate the beginning of the date range in which the responding PMP should search
+        for prescriptions matching the search criteria.</camed:documentation>
+              <camed:documentation type="Value">2000-01-01</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="pmp:RequestPrescriptionDateRangeEnd" path="/pmix:PMPRequest/pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeEnd" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp" exampleValue="%YYYY-MM-DDZ%">
+            <as:Rule>
+              <as:constraint action="setDateMask(YYYY-MM-DD)" xpath="//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeEnd" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeEnd">
+              <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+              <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+              <camed:documentation type="Definition">Used in a request for prescription data to indicate the beginning of the date range in which the responding PMP should search
+        for prescriptions matching the search criteria.</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+        </as:Element>
+        <as:Element name="pmp:RequestPatient" path="/pmix:PMPRequest/pmp:RequestPatient" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+          <as:Rule>
+            <as:constraint action="makeMandatory()" />
+          </as:Rule>
+          <camed:annotation item="//pmix:PMPRequest/pmp:RequestPatient">
+            <camed:documentation type="Type">pmp:PatientType</camed:documentation>
+            <camed:documentation type="Definition">The PMP state that receives the request from outside the state jurisdiction of the initiator and will execute the request.</camed:documentation>
+          </camed:annotation>
+          <as:Element name="nc:PersonBirthDate" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPatient/nc:PersonBirthDate">
+              <camed:documentation type="Type">nc:DateType</camed:documentation>
+            </camed:annotation>
+            <as:Element name="nc:Date" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate/nc:Date" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%YYYY-MM-DDZ%">
+              <as:Rule>
+                <as:constraint condition="string-length(.) &lt;11" action="setDateMask(YYYY-MM-DD)" xpath="//nc:PersonBirthDate/nc:Date" />
+                <as:constraint condition="string-length(.) &gt;10" action="setDateMask(YYYY-MM-DDZ)" xpath="//nc:PersonBirthDate/nc:Date" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonBirthDate/nc:Date">
+                <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+                <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate/nc:Date">
+                <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_DATE_OF_BIRTH</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="nc:PersonName" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPatient/nc:PersonName">
+              <camed:documentation type="Type">nc:PersonNameType</camed:documentation>
+            </camed:annotation>
+            <as:Element name="nc:PersonGivenName" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonGivenName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonName/nc:PersonGivenName">
+                <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonGivenName">
+                <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_FIRST_NAME</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="nc:PersonMiddleName" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonMiddleName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonMiddleName" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonName/nc:PersonMiddleName">
+                <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonMiddleName">
+                <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_FIRST_INITIAL</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="nc:PersonSurName" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonSurName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonName/nc:PersonSurName">
+                <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonSurName">
+                <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_LAST_NAME</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="nc:PersonFullName" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonFullName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeOptional()" xpath="//nc:PersonName/nc:PersonFullName" />
+                <as:constraint action="excludeElement()" xpath="//nc:PersonName/nc:PersonFullName" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonName/nc:PersonFullName">
+                <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="nc:PersonSexCode" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSexCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=SEXCodeType%">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPatient/nc:PersonSexCode">
+              <camed:documentation type="substitutionGroup">nc:PersonSex</camed:documentation>
+              <camed:documentation type="Type">fbi:SEXCodeType</camed:documentation>
+            </camed:annotation>
+            <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSexCode">
+              <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_SEX</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="nc:PersonSSNIdentification" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPatient/nc:PersonSSNIdentification">
+              <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+            </camed:annotation>
+            <as:Element name="nc:IdentificationID" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationID" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationID">
+                <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+              </camed:annotation>
+              <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationID">
+                <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_SSN</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="nc:IdentificationJurisdictionText" path="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationJurisdictionText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="SSN">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText">
+                <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+                <camed:documentation type="Type">nc:TextType</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="pmp:PersonPrimaryContactInformation" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation" namespace="http://xml.ijis.org/niem/2.0/extension" namespacePrefix="pmp">
+            <as:Rule>
+              <as:constraint action="makeRepeatable()" xpath="//pmp:RequestPatient/pmp:PersonPrimaryContactInformation" />
+              <as:constraint action="excludeTree()" xpath="//pmp:RequestPatient/pmp:PersonPrimaryContactInformation" />
+              <as:constraint action="makeOptional()" xpath="//pmp:RequestPatient/pmp:PersonPrimaryContactInformation" />
+            </as:Rule>
+            <camed:annotation item="//pmp:RequestPatient/pmp:PersonPrimaryContactInformation">
+              <camed:documentation type="Type">nc:ContactInformationType</camed:documentation>
+              <camed:documentation type="Definition">Holds telephone number and address of a person
+        Replaces PAT12, PAT13, PAT14, PAT15, PAT16, PAT17</camed:documentation>
+            </camed:annotation>
+            <as:Element name="nc:ContactMailingAddress" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+              <as:Rule>
+                <as:constraint action="excludeTree()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" />
+                <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" />
+                <as:constraint action="makeOptional()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress" />
+              </as:Rule>
+              <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress">
+                <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+                <camed:documentation type="Type">nc:AddressType</camed:documentation>
+              </camed:annotation>
+              <as:Element name="nc:StructuredAddress" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                <as:Rule>
+                  <as:constraint action="makeRepeatable()" xpath="//nc:ContactMailingAddress/nc:StructuredAddress" />
+                </as:Rule>
+                <as:Element name="nc:LocationStreet" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStreet" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+                  <as:Rule>
+                    <as:constraint action="makeMandatory()" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:StructuredAddress/nc:LocationStreet">
+                    <camed:documentation type="substitutionGroup">nc:AddressDeliveryPoint</camed:documentation>
+                    <camed:documentation type="Type">nc:StreetType</camed:documentation>
+                  </camed:annotation>
+                  <as:Element name="nc:StreetFullText" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStreet/nc:StreetFullText" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                    <as:Rule>
+                      <as:constraint action="makeMandatory()" />
+                    </as:Rule>
+                    <camed:annotation item="//nc:LocationStreet/nc:StreetFullText">
+                      <camed:documentation type="Type">nc:TextType</camed:documentation>
+                    </camed:annotation>
+                  </as:Element>
+                </as:Element>
+                <as:Element name="nc:LocationCityName" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationCityName" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeMandatory()" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:StructuredAddress/nc:LocationCityName">
+                    <camed:documentation type="Type">nc:ProperNameTextType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:LocationStateUSPostalServiceCode" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationStateUSPostalServiceCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%type=USStateCodeType%">
+                  <as:Rule>
+                    <as:constraint action="makeMandatory()" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode">
+                    <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+                    <camed:documentation type="Type">usps:USStateCodeType</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+                <as:Element name="nc:LocationPostalCode" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress/nc:StructuredAddress/nc:LocationPostalCode" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="%string%">
+                  <as:Rule>
+                    <as:constraint action="makeMandatory()" />
+                  </as:Rule>
+                  <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalCode">
+                    <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+                  </camed:annotation>
+                </as:Element>
+              </as:Element>
+            </as:Element>
+            <as:Element name="nc:ContactTelephoneNumber" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc">
+              <as:Rule>
+                <as:constraint action="makeRepeatable()" xpath="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber" />
+              </as:Rule>
+              <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber">
+                <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+                <camed:documentation type="Type">nc:TelephoneNumberType</camed:documentation>
+              </camed:annotation>
+              <as:Element name="nc:FullTelephoneNumber" path="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber" namespace="http://niem.gov/niem/niem-core/2.0" namespacePrefix="nc" exampleValue="">
+                <as:Rule>
+                  <as:constraint action="makeMandatory()" />
+                </as:Rule>
+                <camed:annotation item="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+                  <camed:documentation type="substitutionGroup">nc:TelephoneNumberRepresentation</camed:documentation>
+                  <camed:documentation type="Type">nc:FullTelephoneNumberType</camed:documentation>
+                </camed:annotation>
+                <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+                  <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_PHYSICIANS.APL_PHYSICIAN_TELEPHONE</camed:documentation>
+                </camed:annotation>
+              </as:Element>
+            </as:Element>
+          </as:Element>
+        </as:Element>
+      </as:Element>
+    </as:Structure>
+  </as:AssemblyStructure>
+</as:CAM>

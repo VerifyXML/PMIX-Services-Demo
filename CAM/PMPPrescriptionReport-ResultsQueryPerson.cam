@@ -1,0 +1,871 @@
+<as:CAM
+ xmlns:as="http://www.oasis-open.org/committees/cam"
+ xmlns:camed="http://jcam.org.uk/editor"
+ xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+ xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+ xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+ xmlns:xml="http://www.w3.org/XML/1998/namespace"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" CAMlevel="1" version="1.0" cameditor="3.0.0">
+  <as:Header>
+    <as:Description>Generated for PMPPrescriptionReport  by XSD 2 CAM generator v2.05</as:Description>
+    <as:Owner>To be Completed</as:Owner>
+    <as:Version>0.1</as:Version>
+    <as:DateTime>2012-11-27T16:39:25</as:DateTime>
+    <as:Parameters>
+      <as:Parameter name="verify_PMIX.RX_MASTER" default="RX_PATIENT_ID+in+%28SELECT+RX_PATIENT_ID+FROM+RX_PATIENT+where+RX_PATIENT.RX_PATIENT_FAMILYNAME+%3D+%27%24familyName%27%29" use="dbmapping" />
+    </as:Parameters>
+  </as:Header>
+  <as:AssemblyStructure>
+    <as:Structure ID="PMPPrescriptionReport" reference="" taxonomy="XML">
+      <pmix:PMPPrescriptionReport>
+        <pmp:RequestResponsePrescriptionReport>
+          <pmp:ReportExecutionDate>%YYYY-MM-DDZ%</pmp:ReportExecutionDate>
+          <pmp:ReportExecutionTime>%HH:MI:SS.SZ%</pmp:ReportExecutionTime>
+          <pmp:ReportDateRange>
+            <pmp:ReportDateRangeBegin>2000-01-01</pmp:ReportDateRangeBegin>
+            <pmp:ReportDateRangeEnd>%YYYY-MM-DDZ%</pmp:ReportDateRangeEnd>
+          </pmp:ReportDateRange>
+          <pmp:Prescription>
+            <pmp:PrescriptionNumberText>%string%</pmp:PrescriptionNumberText>
+            <pmp:DrugRefillNumberCount>%1%</pmp:DrugRefillNumberCount>
+            <pmp:PrescriptionFilledDate>
+              <nc:Date>%YYYY-MM-DDZ%</nc:Date>
+            </pmp:PrescriptionFilledDate>
+            <pmp:Patient>
+              <nc:PersonBirthDate>
+                <nc:Date>%YYYY-MM-DDZ%</nc:Date>
+                <pmp:ReportDateRangeBegin>%YYYY-MM-DDZ%</pmp:ReportDateRangeBegin>
+                <pmp:ReportDateRangeEnd>%YYYY-MM-DDZ%</pmp:ReportDateRangeEnd>
+                <pmp:RequestPrescriptionDateRangeBegin>%YYYY-MM-DDZ%</pmp:RequestPrescriptionDateRangeBegin>
+                <pmp:RequestPrescriptionDateRangeEnd>%YYYY-MM-DDZ%</pmp:RequestPrescriptionDateRangeEnd>
+                <pmp:ReportExecutionDate>%YYYY-MM-DDZ%</pmp:ReportExecutionDate>
+              </nc:PersonBirthDate>
+              <nc:PersonName>
+                <nc:PersonNamePrefixText>%string%</nc:PersonNamePrefixText>
+                <nc:PersonGivenName>%string%</nc:PersonGivenName>
+                <nc:PersonMiddleName>%string%</nc:PersonMiddleName>
+                <nc:PersonSurName>%string%</nc:PersonSurName>
+                <nc:PersonNameSuffixText>%string%</nc:PersonNameSuffixText>
+                <nc:PersonFullName>%string%</nc:PersonFullName>
+              </nc:PersonName>
+              <nc:PersonSexCode>%type=SEXCodeType%</nc:PersonSexCode>
+              <nc:PersonSSNIdentification>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </nc:PersonSSNIdentification>
+              <pmp:PersonPrimaryContactInformation>
+                <nc:ContactMailingAddress>
+                  <nc:AddressFullText>%string%</nc:AddressFullText>
+                  <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                      <nc:StreetFullText>%string%</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>%string%</nc:LocationCityName>
+                    <nc:LocationStateCanadianProvinceCode>%type=CanadianProvinceCodeType%</nc:LocationStateCanadianProvinceCode>
+                    <nc:LocationStateUSPostalServiceCode>%type=USStateCodeType%</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>%string%</nc:LocationPostalCode>
+                    <nc:LocationPostalExtensionCode>%string%</nc:LocationPostalExtensionCode>
+                  </nc:StructuredAddress>
+                </nc:ContactMailingAddress>
+                <nc:ContactTelephoneNumber>
+                  <nc:FullTelephoneNumber>
+                    <nc:TelephoneNumberFullID>%string%</nc:TelephoneNumberFullID>
+                  </nc:FullTelephoneNumber>
+                </nc:ContactTelephoneNumber>
+                <nc:ContactEntity>
+                  <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>%string%</nc:OrganizationDoingBusinessAsName>
+                    <nc:OrganizationLocation>
+                      <nc:LocationAddress>
+                        <nc:AddressFullText>%string%</nc:AddressFullText>
+                        <nc:StructuredAddress>
+                          <nc:LocationStreet>
+                            <nc:StreetFullText>%string%</nc:StreetFullText>
+                          </nc:LocationStreet>
+                          <nc:LocationCityName>%string%</nc:LocationCityName>
+                          <nc:LocationStateCanadianProvinceCode>%type=CanadianProvinceCodeType%</nc:LocationStateCanadianProvinceCode>
+                          <nc:LocationStateUSPostalServiceCode>%type=USStateCodeType%</nc:LocationStateUSPostalServiceCode>
+                          <nc:LocationPostalCode>%string%</nc:LocationPostalCode>
+                          <nc:LocationPostalExtensionCode>%string%</nc:LocationPostalExtensionCode>
+                        </nc:StructuredAddress>
+                      </nc:LocationAddress>
+                    </nc:OrganizationLocation>
+                    <nc:OrganizationName>%string%</nc:OrganizationName>
+                    <nc:OrganizationPrimaryContactInformation>
+                      <nc:ContactMailingAddress>
+                        <nc:AddressFullText>%string%</nc:AddressFullText>
+                        <nc:StructuredAddress>
+                          <nc:LocationStreet>
+                            <nc:StreetFullText>%string%</nc:StreetFullText>
+                          </nc:LocationStreet>
+                          <nc:LocationCityName>%string%</nc:LocationCityName>
+                          <nc:LocationStateCanadianProvinceCode>%type=CanadianProvinceCodeType%</nc:LocationStateCanadianProvinceCode>
+                          <nc:LocationStateUSPostalServiceCode>%type=USStateCodeType%</nc:LocationStateUSPostalServiceCode>
+                          <nc:LocationPostalCode>%string%</nc:LocationPostalCode>
+                          <nc:LocationPostalExtensionCode>%string%</nc:LocationPostalExtensionCode>
+                        </nc:StructuredAddress>
+                      </nc:ContactMailingAddress>
+                      <nc:ContactTelephoneNumber>
+                        <nc:FullTelephoneNumber>
+                          <nc:TelephoneNumberFullID>%string%</nc:TelephoneNumberFullID>
+                        </nc:FullTelephoneNumber>
+                      </nc:ContactTelephoneNumber>
+                      <nc:ContactEntity />
+                    </nc:OrganizationPrimaryContactInformation>
+                  </nc:EntityOrganization>
+                  <nc:EntityPerson>
+                    <nc:PersonBirthDate>
+                      <nc:Date>%YYYY-MM-DDZ%</nc:Date>
+                      <pmp:ReportDateRangeBegin>%YYYY-MM-DDZ%</pmp:ReportDateRangeBegin>
+                      <pmp:ReportDateRangeEnd>%YYYY-MM-DDZ%</pmp:ReportDateRangeEnd>
+                      <pmp:RequestPrescriptionDateRangeBegin>%YYYY-MM-DDZ%</pmp:RequestPrescriptionDateRangeBegin>
+                      <pmp:RequestPrescriptionDateRangeEnd>%YYYY-MM-DDZ%</pmp:RequestPrescriptionDateRangeEnd>
+                      <pmp:ReportExecutionDate>%YYYY-MM-DDZ%</pmp:ReportExecutionDate>
+                    </nc:PersonBirthDate>
+                    <nc:PersonName>
+                      <nc:PersonNamePrefixText>%string%</nc:PersonNamePrefixText>
+                      <nc:PersonGivenName>%string%</nc:PersonGivenName>
+                      <nc:PersonMiddleName>%string%</nc:PersonMiddleName>
+                      <nc:PersonSurName>%string%</nc:PersonSurName>
+                      <nc:PersonNameSuffixText>%string%</nc:PersonNameSuffixText>
+                      <nc:PersonFullName>%string%</nc:PersonFullName>
+                    </nc:PersonName>
+                    <nc:PersonSexCode>%type=SEXCodeType%</nc:PersonSexCode>
+                    <nc:PersonSSNIdentification>
+                      <nc:IdentificationID>%string%</nc:IdentificationID>
+                      <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+                    </nc:PersonSSNIdentification>
+                  </nc:EntityPerson>
+                </nc:ContactEntity>
+              </pmp:PersonPrimaryContactInformation>
+              <pmp:PersonDriverLicenseIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonDriverLicenseIdentifier>
+              <pmp:PersonMilitaryIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonMilitaryIdentifier>
+              <pmp:PersonOtherIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonOtherIdentifier>
+              <pmp:PersonPassportIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonPassportIdentifier>
+              <pmp:PersonSocialSecurityNumberIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonSocialSecurityNumberIdentifier>
+              <pmp:PersonStateIssuedIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonStateIssuedIdentifier>
+              <pmp:PersonTribalIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:PersonTribalIdentifier>
+              <pmp:PersonUniqueSystemIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>ID</nc:IdentificationJurisdictionText>
+              </pmp:PersonUniqueSystemIdentifier>
+              <pmp:SpeciesCode>%"01"%</pmp:SpeciesCode>
+              <pmp:PatientLocationCode>%"01"%</pmp:PatientLocationCode>
+              <pmp:PatientNameOfAnimalText>%string%</pmp:PatientNameOfAnimalText>
+            </pmp:Patient>
+            <pmp:PrescriptionDrug>
+              <pmp:DrugUPCProductIdentifier>
+                <nc:IdentificationID>%string%</nc:IdentificationID>
+                <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+              </pmp:DrugUPCProductIdentifier>
+              <pmp:DrugProductNameText>%string%</pmp:DrugProductNameText>
+              <pmp:DrugStrengthText>%string%</pmp:DrugStrengthText>
+              <pmp:DrugUnitOfMeasureText>%string%</pmp:DrugUnitOfMeasureText>
+            </pmp:PrescriptionDrug>
+            <pmp:StateIssuedRxSerialNumberIdentifier>
+              <nc:IdentificationID>%string%</nc:IdentificationID>
+              <nc:IdentificationJurisdictionText>%string%</nc:IdentificationJurisdictionText>
+            </pmp:StateIssuedRxSerialNumberIdentifier>
+          </pmp:Prescription>
+        </pmp:RequestResponsePrescriptionReport>
+      </pmix:PMPPrescriptionReport>
+    </as:Structure>
+  </as:AssemblyStructure>
+  <as:BusinessUseContext>
+    <as:Rules>
+      <as:default>
+        <as:context>
+          <as:constraint action="makeNillable(//nc:ContactEntity/nc:EntityOrganization,xsd)" />
+          <as:constraint action="makeOptional(//nc:ContactEntity/nc:EntityOrganization)" />
+          <as:constraint action="makeRepeatable(//nc:ContactEntity/nc:EntityOrganization)" />
+          <as:constraint action="makeNillable(//nc:ContactEntity/nc:EntityPerson,xsd)" />
+          <as:constraint action="makeOptional(//nc:ContactEntity/nc:EntityPerson)" />
+          <as:constraint action="makeRepeatable(//nc:ContactEntity/nc:EntityPerson)" />
+          <as:constraint action="makeNillable(//nc:ContactMailingAddress/nc:AddressFullText,xsd)" />
+          <as:constraint action="makeOptional(//nc:ContactMailingAddress/nc:AddressFullText)" />
+          <as:constraint action="makeRepeatable(//nc:ContactMailingAddress/nc:AddressFullText)" />
+          <as:constraint action="makeNillable(//nc:ContactMailingAddress/nc:StructuredAddress,xsd)" />
+          <as:constraint action="makeOptional(//nc:ContactMailingAddress/nc:StructuredAddress)" />
+          <as:constraint action="makeRepeatable(//nc:ContactMailingAddress/nc:StructuredAddress)" />
+          <as:constraint action="makeNillable(//nc:ContactTelephoneNumber/nc:FullTelephoneNumber,xsd)" />
+          <as:constraint action="makeOptional(//nc:ContactTelephoneNumber/nc:FullTelephoneNumber)" />
+          <as:constraint action="makeRepeatable(//nc:ContactTelephoneNumber/nc:FullTelephoneNumber)" />
+          <as:constraint action="makeNillable(//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName)" />
+          <as:constraint action="makeRepeatable(//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName)" />
+          <as:constraint action="makeNillable(//nc:EntityOrganization/nc:OrganizationLocation,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityOrganization/nc:OrganizationLocation)" />
+          <as:constraint action="makeRepeatable(//nc:EntityOrganization/nc:OrganizationLocation)" />
+          <as:constraint action="makeNillable(//nc:EntityOrganization/nc:OrganizationName,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityOrganization/nc:OrganizationName)" />
+          <as:constraint action="makeRepeatable(//nc:EntityOrganization/nc:OrganizationName)" />
+          <as:constraint action="makeNillable(//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation)" />
+          <as:constraint action="makeRepeatable(//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation)" />
+          <as:constraint action="makeNillable(//nc:EntityPerson/nc:PersonBirthDate,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityPerson/nc:PersonBirthDate)" />
+          <as:constraint action="makeRepeatable(//nc:EntityPerson/nc:PersonBirthDate)" />
+          <as:constraint action="makeNillable(//nc:EntityPerson/nc:PersonName,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityPerson/nc:PersonName)" />
+          <as:constraint action="makeRepeatable(//nc:EntityPerson/nc:PersonName)" />
+          <as:constraint action="makeNillable(//nc:EntityPerson/nc:PersonSSNIdentification,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityPerson/nc:PersonSSNIdentification)" />
+          <as:constraint action="makeRepeatable(//nc:EntityPerson/nc:PersonSSNIdentification)" />
+          <as:constraint action="makeNillable(//nc:EntityPerson/nc:PersonSexCode,xsd)" />
+          <as:constraint action="makeOptional(//nc:EntityPerson/nc:PersonSexCode)" />
+          <as:constraint action="makeRepeatable(//nc:EntityPerson/nc:PersonSexCode)" />
+          <as:constraint action="makeNillable(//nc:FullTelephoneNumber/nc:TelephoneNumberFullID,xsd)" />
+          <as:constraint action="makeOptional(//nc:FullTelephoneNumber/nc:TelephoneNumberFullID)" />
+          <as:constraint action="makeRepeatable(//nc:FullTelephoneNumber/nc:TelephoneNumberFullID)" />
+          <as:constraint action="makeNillable(//nc:LocationAddress/nc:AddressFullText,xsd)" />
+          <as:constraint action="makeOptional(//nc:LocationAddress/nc:AddressFullText)" />
+          <as:constraint action="makeRepeatable(//nc:LocationAddress/nc:AddressFullText)" />
+          <as:constraint action="makeNillable(//nc:LocationAddress/nc:StructuredAddress,xsd)" />
+          <as:constraint action="makeOptional(//nc:LocationAddress/nc:StructuredAddress)" />
+          <as:constraint action="makeRepeatable(//nc:LocationAddress/nc:StructuredAddress)" />
+          <as:constraint action="makeNillable(//nc:LocationStreet/nc:StreetFullText,xsd)" />
+          <as:constraint action="makeOptional(//nc:LocationStreet/nc:StreetFullText)" />
+          <as:constraint action="makeRepeatable(//nc:LocationStreet/nc:StreetFullText)" />
+          <as:constraint action="makeNillable(//nc:OrganizationLocation/nc:LocationAddress,xsd)" />
+          <as:constraint action="makeOptional(//nc:OrganizationLocation/nc:LocationAddress)" />
+          <as:constraint action="makeRepeatable(//nc:OrganizationLocation/nc:LocationAddress)" />
+          <as:constraint action="makeNillable(//nc:OrganizationPrimaryContactInformation/nc:ContactEntity,xsd)" />
+          <as:constraint action="makeOptional(//nc:OrganizationPrimaryContactInformation/nc:ContactEntity)" />
+          <as:constraint action="makeRepeatable(//nc:OrganizationPrimaryContactInformation/nc:ContactEntity)" />
+          <as:constraint action="makeNillable(//nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress,xsd)" />
+          <as:constraint action="makeOptional(//nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeRepeatable(//nc:OrganizationPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeNillable(//nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber,xsd)" />
+          <as:constraint action="makeOptional(//nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber)" />
+          <as:constraint action="makeRepeatable(//nc:OrganizationPrimaryContactInformation/nc:ContactTelephoneNumber)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/nc:Date,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/nc:Date,YYYY-MM-DDZ)" />
+          <as:constraint action="excludeElement(//nc:PersonBirthDate/pmp:ReportDateRangeBegin)" />
+          <as:constraint action="makeNillable(//nc:PersonBirthDate/pmp:ReportDateRangeBegin,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonBirthDate/pmp:ReportDateRangeBegin)" />
+          <as:constraint action="makeRepeatable(//nc:PersonBirthDate/pmp:ReportDateRangeBegin)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/pmp:ReportDateRangeBegin,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/pmp:ReportDateRangeBegin,YYYY-MM-DDZ)" />
+          <as:constraint action="excludeElement(//nc:PersonBirthDate/pmp:ReportDateRangeEnd)" />
+          <as:constraint action="makeNillable(//nc:PersonBirthDate/pmp:ReportDateRangeEnd,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonBirthDate/pmp:ReportDateRangeEnd)" />
+          <as:constraint action="makeRepeatable(//nc:PersonBirthDate/pmp:ReportDateRangeEnd)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/pmp:ReportDateRangeEnd,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/pmp:ReportDateRangeEnd,YYYY-MM-DDZ)" />
+          <as:constraint action="excludeElement(//nc:PersonBirthDate/pmp:ReportExecutionDate)" />
+          <as:constraint action="makeNillable(//nc:PersonBirthDate/pmp:ReportExecutionDate,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonBirthDate/pmp:ReportExecutionDate)" />
+          <as:constraint action="makeRepeatable(//nc:PersonBirthDate/pmp:ReportExecutionDate)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/pmp:ReportExecutionDate,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/pmp:ReportExecutionDate,YYYY-MM-DDZ)" />
+          <as:constraint action="excludeElement(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin)" />
+          <as:constraint action="makeNillable(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin)" />
+          <as:constraint action="makeRepeatable(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeBegin,YYYY-MM-DDZ)" />
+          <as:constraint action="excludeElement(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd)" />
+          <as:constraint action="makeNillable(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd)" />
+          <as:constraint action="makeRepeatable(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/pmp:RequestPrescriptionDateRangeEnd,YYYY-MM-DDZ)" />
+          <as:constraint action="makeNillable(//nc:PersonName/nc:PersonFullName,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonFullName)" />
+          <as:constraint action="makeRepeatable(//nc:PersonName/nc:PersonFullName)" />
+          <as:constraint action="makeNillable(//nc:PersonName/nc:PersonGivenName,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonGivenName)" />
+          <as:constraint action="makeRepeatable(//nc:PersonName/nc:PersonGivenName)" />
+          <as:constraint action="excludeElement(//nc:PersonName/nc:PersonMiddleName)" />
+          <as:constraint action="makeNillable(//nc:PersonName/nc:PersonMiddleName,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonMiddleName)" />
+          <as:constraint action="makeRepeatable(//nc:PersonName/nc:PersonMiddleName)" />
+          <as:constraint action="excludeElement(//nc:PersonName/nc:PersonNamePrefixText)" />
+          <as:constraint action="makeNillable(//nc:PersonName/nc:PersonNamePrefixText,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonNamePrefixText)" />
+          <as:constraint action="makeRepeatable(//nc:PersonName/nc:PersonNamePrefixText)" />
+          <as:constraint action="excludeElement(//nc:PersonName/nc:PersonNameSuffixText)" />
+          <as:constraint action="makeNillable(//nc:PersonName/nc:PersonNameSuffixText,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonNameSuffixText)" />
+          <as:constraint action="makeRepeatable(//nc:PersonName/nc:PersonNameSuffixText)" />
+          <as:constraint action="makeNillable(//nc:PersonName/nc:PersonSurName,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonSurName)" />
+          <as:constraint action="makeRepeatable(//nc:PersonName/nc:PersonSurName)" />
+          <as:constraint action="makeNillable(//nc:PersonSSNIdentification/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonSSNIdentification/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//nc:PersonSSNIdentification/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//nc:StructuredAddress/nc:LocationCityName,xsd)" />
+          <as:constraint action="makeOptional(//nc:StructuredAddress/nc:LocationCityName)" />
+          <as:constraint action="makeRepeatable(//nc:StructuredAddress/nc:LocationCityName)" />
+          <as:constraint action="makeNillable(//nc:StructuredAddress/nc:LocationPostalCode,xsd)" />
+          <as:constraint action="makeOptional(//nc:StructuredAddress/nc:LocationPostalCode)" />
+          <as:constraint action="makeRepeatable(//nc:StructuredAddress/nc:LocationPostalCode)" />
+          <as:constraint action="makeNillable(//nc:StructuredAddress/nc:LocationPostalExtensionCode,xsd)" />
+          <as:constraint action="makeOptional(//nc:StructuredAddress/nc:LocationPostalExtensionCode)" />
+          <as:constraint action="makeRepeatable(//nc:StructuredAddress/nc:LocationPostalExtensionCode)" />
+          <as:constraint action="makeNillable(//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode,xsd)" />
+          <as:constraint action="makeOptional(//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode)" />
+          <as:constraint action="makeRepeatable(//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode)" />
+          <as:constraint action="makeNillable(//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode,xsd)" />
+          <as:constraint action="makeOptional(//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode)" />
+          <as:constraint action="makeRepeatable(//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode)" />
+          <as:constraint action="makeNillable(//nc:StructuredAddress/nc:LocationStreet,xsd)" />
+          <as:constraint action="makeOptional(//nc:StructuredAddress/nc:LocationStreet)" />
+          <as:constraint action="makeRepeatable(//nc:StructuredAddress/nc:LocationStreet)" />
+          <as:constraint action="makeNillable(//pmix:PMPPrescriptionReport,xsd)" />
+          <as:constraint action="makeNillable(//pmp:DrugUPCProductIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:DrugUPCProductIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:DrugUPCProductIdentifier/nc:IdentificationID)" />
+          <as:constraint action="excludeElement(//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="excludeTree(//pmp:Patient/nc:PersonBirthDate)" />
+          <as:constraint action="makeOptional(//pmp:Patient/nc:PersonBirthDate)" />
+          <as:constraint action="excludeTree(//pmp:Patient/nc:PersonSSNIdentification)" />
+          <as:constraint action="makeNillable(//pmp:Patient/nc:PersonSSNIdentification,xsd)" />
+          <as:constraint action="makeOptional(//pmp:Patient/nc:PersonSSNIdentification)" />
+          <as:constraint action="makeRepeatable(//pmp:Patient/nc:PersonSSNIdentification)" />
+          <as:constraint action="excludeElement(//pmp:Patient/pmp:PatientLocationCode)" />
+          <as:constraint action="makeNillable(//pmp:Patient/pmp:PatientLocationCode,xsd)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PatientLocationCode)" />
+          <as:constraint action="restrictValues(//pmp:Patient/pmp:PatientLocationCode,'01' |'02' |'03' |'04' |'05' |'06' |'07' |'08' |'09' |'10' |'11' |'98' |'99')">
+            <as:annotation>
+              <as:documentation type="Definition">01 - Home | 
+02 - Intermediary Care | 
+03 - Nursing Home | 
+04 - Long-Term/Extended Care | 
+05 - Rest Home | 
+06 - Boarding Home | 
+07 - Skilled-Care Facility | 
+08 - Sub-Acute Care Facility | 
+09 - Acute-Care Facility | 
+10 - Outpatient | 
+11 - Hospice | 
+98 - Unknown | 
+99 - Other |</as:documentation>
+            </as:annotation>
+          </as:constraint>
+          <as:constraint action="excludeElement(//pmp:Patient/pmp:PatientNameOfAnimalText)" />
+          <as:constraint action="makeNillable(//pmp:Patient/pmp:PatientNameOfAnimalText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PatientNameOfAnimalText)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonDriverLicenseIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonDriverLicenseIdentifier)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonMilitaryIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonMilitaryIdentifier)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonOtherIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonOtherIdentifier)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonPassportIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonPassportIdentifier)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonPrimaryContactInformation)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonPrimaryContactInformation)" />
+          <as:constraint action="makeRepeatable(//pmp:Patient/pmp:PersonPrimaryContactInformation)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonStateIssuedIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonStateIssuedIdentifier)" />
+          <as:constraint action="excludeTree(//pmp:Patient/pmp:PersonTribalIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:PersonTribalIdentifier)" />
+          <as:constraint action="excludeElement(//pmp:Patient/pmp:SpeciesCode)" />
+          <as:constraint action="makeNillable(//pmp:Patient/pmp:SpeciesCode,xsd)" />
+          <as:constraint action="makeOptional(//pmp:Patient/pmp:SpeciesCode)" />
+          <as:constraint action="restrictValues(//pmp:Patient/pmp:SpeciesCode,'01' |'02')">
+            <as:annotation>
+              <as:documentation type="Definition">01 - Human | 
+02 - Veterinary Patient |</as:documentation>
+            </as:annotation>
+          </as:constraint>
+          <as:constraint action="makeNillable(//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:PersonMilitaryIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonMilitaryIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonMilitaryIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:PersonOtherIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonOtherIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonOtherIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:PersonPassportIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonPassportIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPassportIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:PersonPrimaryContactInformation/nc:ContactEntity,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonPrimaryContactInformation/nc:ContactEntity)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPrimaryContactInformation/nc:ContactEntity)" />
+          <as:constraint action="makeNillable(//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeNillable(//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber)" />
+          <as:constraint action="makeNillable(//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:PersonStateIssuedIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonStateIssuedIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonStateIssuedIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:PersonTribalIdentifier/nc:IdentificationID,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonTribalIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonTribalIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeNillable(//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeOptional(//pmp:PersonUniqueSystemIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeOptional(//pmp:PersonUniqueSystemIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="makeNillable(//pmp:Prescription/pmp:DrugRefillNumberCount,xsd)" />
+          <as:constraint action="setNumberMask(//pmp:Prescription/pmp:DrugRefillNumberCount,######)" />
+          <as:constraint action="makeRepeatable(//pmp:Prescription/pmp:PrescriptionDrug)" />
+          <as:constraint action="makeOptional(//pmp:Prescription/pmp:PrescriptionFilledDate)" />
+          <as:constraint action="makeNillable(//pmp:Prescription/pmp:PrescriptionNumberText,xsd)" />
+          <as:constraint action="makeOptional(//pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:PrescriptionDrug/pmp:DrugStrengthText)" />
+          <as:constraint action="makeOptional(//pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier)" />
+          <as:constraint action="makeOptional(//pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText)" />
+          <as:constraint action="makeOptional(//pmp:PrescriptionFilledDate/nc:Date)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//pmp:PrescriptionFilledDate/nc:Date,YYYY-MM-DD)" />
+          <as:constraint action="makeNillable(//pmp:ReportDateRange/pmp:ReportDateRangeBegin,xsd)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//pmp:ReportDateRange/pmp:ReportDateRangeBegin,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//pmp:ReportDateRange/pmp:ReportDateRangeBegin,YYYY-MM-DDZ)" />
+          <as:constraint action="setDateMask(//pmp:ReportDateRange/pmp:ReportDateRangeEnd,YYYY-MM-DD)" />
+          <as:constraint action="makeRepeatable(//pmp:RequestResponsePrescriptionReport/pmp:Prescription)" />
+          <as:constraint action="setDateMask(//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionDate,YYYY-MM-DD)" />
+          <as:constraint action="setDateMask(//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionTime,HH:MI:SS.SSS)" />
+          <as:constraint action="makeOptional(//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID)" />
+          <as:constraint action="makeOptional(//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText)" />
+          <as:constraint action="setChoice(//nc:ContactEntity/*[contains(name(),'nc:EntityOrganization') or contains(name(),'nc:EntityPerson')])" />
+          <as:constraint action="setChoice(//nc:LocationAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" />
+          <as:constraint action="setChoice(//nc:StructuredAddress/*[contains(name(),'nc:LocationStateCanadianProvinceCode') or contains(name(),'nc:LocationStateUSPostalServiceCode')])" />
+          <as:constraint action="setChoice(//nc:OrganizationPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')])" />
+          <as:constraint action="setChoice(//nc:ContactMailingAddress/*[contains(name(),'nc:AddressFullText') or contains(name(),'nc:StructuredAddress')])" />
+          <as:constraint action="setChoice(//pmp:PersonPrimaryContactInformation/*[contains(name(),'nc:ContactMailingAddress') or contains(name(),'nc:ContactTelephoneNumber')])" />
+        </as:context>
+      </as:default>
+    </as:Rules>
+  </as:BusinessUseContext>
+  <as:Extension name="uk.org.jcam.camed.extensions.StructureAnnotations">
+    <camed:annotation item="//nc:ContactEntity/nc:EntityOrganization">
+      <camed:documentation type="substitutionGroup">nc:EntityRepresentation</camed:documentation>
+      <camed:documentation type="Type">nc:OrganizationType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:ContactEntity/nc:EntityPerson">
+      <camed:documentation type="substitutionGroup">nc:EntityRepresentation</camed:documentation>
+      <camed:documentation type="Type">nc:PersonType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+      <camed:documentation type="substitutionGroup">nc:TelephoneNumberRepresentation</camed:documentation>
+      <camed:documentation type="Type">nc:FullTelephoneNumberType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityOrganization/nc:OrganizationDoingBusinessAsName">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityOrganization/nc:OrganizationLocation">
+      <camed:documentation type="Type">nc:LocationType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityOrganization/nc:OrganizationName">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityOrganization/nc:OrganizationPrimaryContactInformation">
+      <camed:documentation type="Type">nc:ContactInformationType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityPerson/nc:PersonBirthDate">
+      <camed:documentation type="Type">nc:DateType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityPerson/nc:PersonName">
+      <camed:documentation type="Type">nc:PersonNameType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityPerson/nc:PersonSSNIdentification">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:EntityPerson/nc:PersonSexCode">
+      <camed:documentation type="substitutionGroup">nc:PersonSex</camed:documentation>
+      <camed:documentation type="Type">fbi:SEXCodeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:FullTelephoneNumber/nc:TelephoneNumberFullID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:LocationAddress/nc:AddressFullText">
+      <camed:documentation type="substitutionGroup">nc:AddressRepresentation</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:LocationAddress/nc:StructuredAddress">
+      <camed:documentation type="substitutionGroup">nc:AddressRepresentation</camed:documentation>
+      <camed:documentation type="Type">nc:StructuredAddressType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:LocationStreet/nc:StreetFullText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:OrganizationLocation/nc:LocationAddress">
+      <camed:documentation type="Type">nc:AddressType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:OrganizationPrimaryContactInformation/nc:ContactEntity">
+      <camed:documentation type="Type">nc:EntityType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonFullName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonGivenName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonMiddleName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonNamePrefixText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonNameSuffixText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonSurName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationCityName">
+      <camed:documentation type="Type">nc:ProperNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalCode">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalExtensionCode">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationStateCanadianProvinceCode">
+      <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+      <camed:documentation type="Type">can:CanadianProvinceCodeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode">
+      <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+      <camed:documentation type="Type">usps:USStateCodeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationStreet">
+      <camed:documentation type="substitutionGroup">nc:AddressDeliveryPoint</camed:documentation>
+      <camed:documentation type="Type">nc:StreetType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport">
+      <camed:documentation type="Type">pmp:RequestResponsePrescriptionReportType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PrescriptionReport</camed:documentation>
+      <camed:documentation type="Definition">A prescription report sent to a PMP from another PMP in response to a request for information by that PMP.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:DrugUPCProductIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:DrugUPCProductIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/nc:PersonBirthDate">
+      <camed:documentation type="Type">nc:DateType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/nc:PersonName">
+      <camed:documentation type="Type">nc:PersonNameType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/nc:PersonSSNIdentification">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/nc:PersonSexCode">
+      <camed:documentation type="substitutionGroup">nc:PersonSex</camed:documentation>
+      <camed:documentation type="Type">fbi:SEXCodeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PatientLocationCode">
+      <camed:documentation type="Type">pmpcd:PatientLocationCodeType</camed:documentation>
+      <camed:documentation type="Definition">Indicates where the patient is located when receiving pharmacy services
+        Replaces PAT21</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PatientNameOfAnimalText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+      <camed:documentation type="Definition">Name of animal for veterinary medications
+        Replaces PAT23</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonDriverLicenseIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using their driver's license number and the entity which has jurisdiction over the licensee based on the license.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonMilitaryIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using their military id number and the entity which has jurisdiction over the licensee based on the license.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonOtherIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using an id number and the entity which has jurisdiction over the licensee based on the license.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonPassportIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using their passport number and the entity which has jurisdiction over the passport.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonPrimaryContactInformation">
+      <camed:documentation type="Type">nc:ContactInformationType</camed:documentation>
+      <camed:documentation type="Definition">Holds telephone number and address of a person
+        Replaces PAT12, PAT13, PAT14, PAT15, PAT16, PAT17</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonSocialSecurityNumberIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using their social security number and the entity which has jurisdiction over the number.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonStateIssuedIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using their state identification number and the entity which has jurisdiction over the identification.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonTribalIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using their tribal id number and the entity which has jurisdiction over the id.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:PersonUniqueSystemIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:PersonIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identfies a person using a unique system number and the entity which has jurisdiction over the number.
+        This property and its subproperties replace PAT01, PAT02 and PAT03 or PAT04, PAT05 and PAT06 or AIR03, AIR04 and AIR05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Patient/pmp:SpeciesCode">
+      <camed:documentation type="Type">pmpcd:SpeciesCodeType</camed:documentation>
+      <camed:documentation type="Definition">Indicates whether the patient is human or an animal.
+        Replaces PAT20</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonDriverLicenseIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonMilitaryIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonMilitaryIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonOtherIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonOtherIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPassportIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPassportIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactEntity">
+      <camed:documentation type="Type">nc:EntityType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress">
+      <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+      <camed:documentation type="Type">nc:AddressType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber">
+      <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+      <camed:documentation type="Type">nc:TelephoneNumberType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonSocialSecurityNumberIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonStateIssuedIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonStateIssuedIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonTribalIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonTribalIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonUniqueSystemIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonUniqueSystemIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Prescription/pmp:DrugRefillNumberCount">
+      <camed:documentation type="Type">niem-xsd:nonNegativeInteger</camed:documentation>
+      <camed:documentation type="Definition">Number of the fill of the prescription. 0 indicates original dispensing.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Prescription/pmp:Patient">
+      <camed:documentation type="Type">pmp:PatientType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Prescription/pmp:PrescriptionDrug">
+      <camed:documentation type="Type">pmp:PrescriptionDrugType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Prescription/pmp:PrescriptionFilledDate">
+      <camed:documentation type="Type">nc:DateType</camed:documentation>
+      <camed:documentation type="Definition">Date the prescription was filled
+        replaces DSP05</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Prescription/pmp:PrescriptionNumberText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+      <camed:documentation type="Definition">Serial number assigned to the prescription by the pharmacy.
+        Replaces DSP02</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="Definition">Number assigned to a state issued serialized prescription blank as well as the state which issued it.
+        Replaces AIR01 and AIR02</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugProductNameText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+      <camed:documentation type="Definition">Product Name of the Drug.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugStrengthText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+      <camed:documentation type="Definition">The level of potency of the drug.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+      <camed:documentation type="substitutionGroup">pmp:DrugProductIdentifier</camed:documentation>
+      <camed:documentation type="Definition">Identifies a drug using the UPC
+        Replaces DSP07 and DSP08 when DSP07 is 02 UPC</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+      <camed:documentation type="Definition">The unit in which the particular drug is measured</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PrescriptionFilledDate/nc:Date">
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:ReportDateRange/pmp:ReportDateRangeBegin">
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Definition">Identifies the beginning of the data range of prescriptions included in the report.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:ReportDateRange/pmp:ReportDateRangeEnd">
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Definition">Identifies the end of the date range of prescriptions included in the report.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:Prescription">
+      <camed:documentation type="Type">pmp:PrescriptionType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:ReportDateRange">
+      <camed:documentation type="Type">pmp:ReportDateRangeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionDate">
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Definition">The Date the report was generated.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestResponsePrescriptionReport/pmp:ReportExecutionTime">
+      <camed:documentation type="Type">niem-xsd:time</camed:documentation>
+      <camed:documentation type="Definition">The Time the report was generated.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:DrugRefillNumberCount">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_REFILL_COUNT</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonFullName">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_FULLNAME</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonGivenName">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_GIVENNAME</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonName/nc:PersonSurName">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_FAMILYNAME</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/nc:PersonSexCode">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_SEX</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:Patient/pmp:PersonUniqueSystemIdentifier/nc:IdentificationID">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_PATIENT.RX_PATIENT_ID</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugProductNameText">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_NAME</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugStrengthText">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_STRENGTH</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUPCProductIdentifier/nc:IdentificationID">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_ID</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionDrug/pmp:DrugUnitOfMeasureText">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_DRUG.RX_DRUG_DOSE</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionFilledDate/nc:Date">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_FILLED_DATE</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:PrescriptionNumberText">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_KEY</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationID">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_ISSUER_ID</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription/pmp:StateIssuedRxSerialNumberIdentifier/nc:IdentificationJurisdictionText">
+      <camed:documentation type="DBMapping">verify_PMIX.RX_MASTER.RX_STATE_CODE</camed:documentation>
+    </camed:annotation>
+  </as:Extension>
+</as:CAM>

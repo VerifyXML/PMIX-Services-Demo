@@ -1,0 +1,195 @@
+<as:CAM
+ xmlns:as="http://www.oasis-open.org/committees/cam"
+ xmlns:camed="http://jcam.org.uk/editor"
+ xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+ xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+ xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+ xmlns:xml="http://www.w3.org/XML/1998/namespace"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" CAMlevel="1" version="1.0" cameditor="3.0.0">
+  <as:Header>
+    <as:Description>Generated for PMPRequest  by XSD 2 CAM generator v2.05</as:Description>
+    <as:Owner>To be Completed</as:Owner>
+    <as:Version>0.1</as:Version>
+    <as:DateTime>2012-11-26T17:22:17</as:DateTime>
+    <as:Parameters>
+      <as:Parameter name="verify_PMIX.APPLICANT_MASTER" default="APPLICANT_ID+%3D+%27%24IDnumber%27" use="dbmapping" />
+    </as:Parameters>
+  </as:Header>
+  <as:AssemblyStructure>
+    <as:Structure ID="PMPRequest" reference="" taxonomy="XML">
+      <pmix:PMPRequest>
+        <pmp:RequestPrescriptionDateRange>
+          <pmp:RequestPrescriptionDateRangeBegin>%YYYY-MM-DDZ%</pmp:RequestPrescriptionDateRangeBegin>
+          <pmp:RequestPrescriptionDateRangeEnd>%YYYY-MM-DDZ%</pmp:RequestPrescriptionDateRangeEnd>
+        </pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPatient>
+          <nc:PersonBirthDate>
+            <nc:Date>%YYYY-MM-DDZ%</nc:Date>
+          </nc:PersonBirthDate>
+          <nc:PersonName>
+            <nc:PersonGivenName>%string%</nc:PersonGivenName>
+            <nc:PersonMiddleName>%string%</nc:PersonMiddleName>
+            <nc:PersonSurName>%string%</nc:PersonSurName>
+            <nc:PersonFullName>%string%</nc:PersonFullName>
+          </nc:PersonName>
+          <nc:PersonSexCode>%type=SEXCodeType%</nc:PersonSexCode>
+          <nc:PersonSSNIdentification>
+            <nc:IdentificationID>%string%</nc:IdentificationID>
+            <nc:IdentificationJurisdictionText>SSN</nc:IdentificationJurisdictionText>
+          </nc:PersonSSNIdentification>
+          <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+              <nc:StructuredAddress>
+                <nc:LocationStreet>
+                  <nc:StreetFullText>%string%</nc:StreetFullText>
+                </nc:LocationStreet>
+                <nc:LocationCityName>%string%</nc:LocationCityName>
+                <nc:LocationStateUSPostalServiceCode>%type=USStateCodeType%</nc:LocationStateUSPostalServiceCode>
+                <nc:LocationPostalCode>%string%</nc:LocationPostalCode>
+              </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactTelephoneNumber>
+              <nc:FullTelephoneNumber />
+            </nc:ContactTelephoneNumber>
+          </pmp:PersonPrimaryContactInformation>
+        </pmp:RequestPatient>
+      </pmix:PMPRequest>
+    </as:Structure>
+  </as:AssemblyStructure>
+  <as:BusinessUseContext>
+    <as:Rules>
+      <as:default>
+        <as:context>
+          <as:constraint action="makeRepeatable(//nc:ContactMailingAddress/nc:StructuredAddress)" />
+          <as:constraint condition="string-length(.) &lt;11" action="setDateMask(//nc:PersonBirthDate/nc:Date,YYYY-MM-DD)" />
+          <as:constraint condition="string-length(.) &gt;10" action="setDateMask(//nc:PersonBirthDate/nc:Date,YYYY-MM-DDZ)" />
+          <as:constraint action="excludeElement(//nc:PersonName/nc:PersonFullName)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonFullName)" />
+          <as:constraint action="makeOptional(//nc:PersonName/nc:PersonMiddleName)" />
+          <as:constraint action="excludeTree(//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeOptional(//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress)" />
+          <as:constraint action="makeRepeatable(//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber)" />
+          <as:constraint action="excludeTree(//pmp:RequestPatient/pmp:PersonPrimaryContactInformation)" />
+          <as:constraint action="makeOptional(//pmp:RequestPatient/pmp:PersonPrimaryContactInformation)" />
+          <as:constraint action="makeRepeatable(//pmp:RequestPatient/pmp:PersonPrimaryContactInformation)" />
+          <as:constraint action="setDateMask(//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeBegin,YYYY-MM-DD)" />
+          <as:constraint action="setDateMask(//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeEnd,YYYY-MM-DD)" />
+        </as:context>
+      </as:default>
+    </as:Rules>
+  </as:BusinessUseContext>
+  <as:Extension name="uk.org.jcam.camed.extensions.StructureAnnotations">
+    <camed:annotation item="//nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+      <camed:documentation type="substitutionGroup">nc:TelephoneNumberRepresentation</camed:documentation>
+      <camed:documentation type="Type">nc:FullTelephoneNumberType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:LocationStreet/nc:StreetFullText">
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonBirthDate/nc:Date">
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonFullName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonGivenName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonMiddleName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonName/nc:PersonSurName">
+      <camed:documentation type="Type">nc:PersonNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationID">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:PersonSSNIdentification/nc:IdentificationJurisdictionText">
+      <camed:documentation type="substitutionGroup">nc:IdentificationJurisdiction</camed:documentation>
+      <camed:documentation type="Type">nc:TextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationCityName">
+      <camed:documentation type="Type">nc:ProperNameTextType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationPostalCode">
+      <camed:documentation type="Type">niem-xsd:string</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationStateUSPostalServiceCode">
+      <camed:documentation type="substitutionGroup">nc:LocationState</camed:documentation>
+      <camed:documentation type="Type">usps:USStateCodeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//nc:StructuredAddress/nc:LocationStreet">
+      <camed:documentation type="substitutionGroup">nc:AddressDeliveryPoint</camed:documentation>
+      <camed:documentation type="Type">nc:StreetType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmix:PMPRequest/pmp:RequestPatient">
+      <camed:documentation type="Type">pmp:PatientType</camed:documentation>
+      <camed:documentation type="Definition">The PMP state that receives the request from outside the state jurisdiction of the initiator and will execute the request.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmix:PMPRequest/pmp:RequestPrescriptionDateRange">
+      <camed:documentation type="Type">pmp:RequestPrescriptionDateRangeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactMailingAddress">
+      <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+      <camed:documentation type="Type">nc:AddressType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber">
+      <camed:documentation type="substitutionGroup">nc:ContactMeans</camed:documentation>
+      <camed:documentation type="Type">nc:TelephoneNumberType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPatient/nc:PersonBirthDate">
+      <camed:documentation type="Type">nc:DateType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPatient/nc:PersonName">
+      <camed:documentation type="Type">nc:PersonNameType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPatient/nc:PersonSSNIdentification">
+      <camed:documentation type="Type">nc:IdentificationType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPatient/nc:PersonSexCode">
+      <camed:documentation type="substitutionGroup">nc:PersonSex</camed:documentation>
+      <camed:documentation type="Type">fbi:SEXCodeType</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPatient/pmp:PersonPrimaryContactInformation">
+      <camed:documentation type="Type">nc:ContactInformationType</camed:documentation>
+      <camed:documentation type="Definition">Holds telephone number and address of a person
+        Replaces PAT12, PAT13, PAT14, PAT15, PAT16, PAT17</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeBegin">
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+      <camed:documentation type="Definition">Used in a request for prescription data to indicate the beginning of the date range in which the responding PMP should search
+        for prescriptions matching the search criteria.</camed:documentation>
+      <camed:documentation type="Value">2000-01-01</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="//pmp:RequestPrescriptionDateRange/pmp:RequestPrescriptionDateRangeEnd">
+      <camed:documentation type="Type">niem-xsd:date</camed:documentation>
+      <camed:documentation type="substitutionGroup">nc:DateRepresentation</camed:documentation>
+      <camed:documentation type="Definition">Used in a request for prescription data to indicate the beginning of the date range in which the responding PMP should search
+        for prescriptions matching the search criteria.</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate/nc:Date">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_DATE_OF_BIRTH</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonGivenName">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_FIRST_NAME</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonMiddleName">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_FIRST_INITIAL</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonSurName">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_LAST_NAME</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationID">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_SSN</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/nc:PersonSexCode">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_MASTER.APL_SEX</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/pmix:PMPRequest/pmp:RequestPatient/pmp:PersonPrimaryContactInformation/nc:ContactTelephoneNumber/nc:FullTelephoneNumber">
+      <camed:documentation type="DBMapping">verify_PMIX.APPLICANT_PHYSICIANS.APL_PHYSICIAN_TELEPHONE</camed:documentation>
+    </camed:annotation>
+  </as:Extension>
+</as:CAM>
